@@ -1,0 +1,58 @@
+interface MyLambda {
+    void display(String str);
+}
+
+public class LambdaDemo {
+    public static void main(String[] args) {
+//        MyLambda ml = System.out::println;
+
+        LambdaDemo ld = new LambdaDemo();
+        MyLambda ml = ld::reverse;
+        ml.display("Hello");
+    }
+
+    public void reverse(String str) {
+        StringBuffer sb = new StringBuffer(str);
+        sb.reverse();
+        System.err.println(sb);
+    }
+}
+// Calling a method reference without a static method reference.
+//======================================================================================================================
+// Method reference using a Constructor
+
+interface MyLambda {
+    void display(String str);
+}
+
+public class LambdaDemo {
+    public LambdaDemo(String s) {
+        System.out.println(s.toUpperCase());
+    }
+
+    public static void main(String[] args) {
+        MyLambda ml = LambdaDemo::new;
+        ml.display("Hello");
+    }
+
+}
+
+//======================================================================================================================
+// Method reference using a Constructor with more parameters
+
+interface MyLambda {
+    int display(String str1, String str2);
+}
+
+public class LambdaDemo {
+    public LambdaDemo(String s) {
+        System.out.println(s.toUpperCase());
+    }
+
+    public static void main(String[] args) {
+        MyLambda ml=String::compareTo;
+        var result = ml.display("hello", "well");
+        System.out.println(result);
+    }
+
+}

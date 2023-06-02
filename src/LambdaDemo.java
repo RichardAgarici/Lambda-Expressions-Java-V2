@@ -1,25 +1,18 @@
 interface MyLambda {
-    void display();
-}
-
-class UseLambda {
-    public void callLambda(MyLambda m1) {
-        m1.display();
-    }
-}
-
-
-class Demo {
-    public static void method1() {
-        UseLambda ul = new UseLambda();
-        ul.callLambda(()-> System.out.println("Hello"));
-    }
+    int display(String str1, String str2);
 }
 
 public class LambdaDemo {
-    public static void main(String[] args) {
-        Demo.method1();
+    public LambdaDemo(String s) {
+        System.out.println(s.toUpperCase());
     }
+
+    public static void main(String[] args) {
+        MyLambda ml=String::compareTo;
+        var result = ml.display("hello", "well");
+        System.out.println(result);
+    }
+
 }
 
 
