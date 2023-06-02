@@ -1,0 +1,32 @@
+interface MyLambda {
+    void display();
+}
+
+class Demo {
+    int temp = 10;
+
+    public void method1() {
+        int count = 0;
+        MyLambda m1 = () -> {
+            System.out.println("Hi");
+            System.out.println("Bye" + count+(temp++));
+        };
+        m1.display();
+    }
+}
+
+//Lambda can have variables inside its method.
+//Variables outside the lambda can be used in situation when it's final or, it's not used after the lambda expression.
+// This is only for functions inside the class. Because of the scope.
+//Variables of the CLASS can be used in the lambda without being final.
+
+public class LambdaDemo {
+    public static void main(String[] args) {
+        Demo d = new Demo();
+        d.method1();
+    }
+}
+
+//======================================================================================================================
+
+

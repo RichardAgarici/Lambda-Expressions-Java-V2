@@ -1,0 +1,6 @@
+Lambda expressions are used to define a specific interface with a single function.
+
+If an interface has only a single abstract public method, I will be called a functional interface, and can be used as a
+lambda expression.
+
+we can use @FunctionalInterface. it's mandatory to put only 1 INTERFACE.

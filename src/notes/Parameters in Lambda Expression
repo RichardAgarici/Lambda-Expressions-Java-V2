@@ -1,0 +1,35 @@
+//======================================================================================================================
+// Single Parameters
+
+@FunctionalInterface
+interface MyLambda {
+    void display(String str);
+}
+
+public class LambdaDemo {
+    public static void main(String[] args) {
+        MyLambda m = (s) -> {
+            System.out.println(s);
+        };
+
+        m.display("Java Programing");
+    }
+}
+
+//======================================================================================================================
+// Multiple Parameters
+
+@FunctionalInterface
+interface MyLambda {
+    int add(int x, int y );
+}
+
+public class LambdaDemo {
+    public static void main(String[] args) {
+        MyLambda m = (a,b) -> a+b;
+        int r = m.add(20,30);
+        System.out.println(r);
+        };
+    }
+
+//======================================================================================================================
